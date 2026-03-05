@@ -1,11 +1,36 @@
-#PrestaSharp
-###CSharp .Net client library for the PrestaShop API via web service
+# PrestaSharp
+### C# .NET client library for the PrestaShop API via web service
 
-##Introduction
-A simple .Net REST client written in C# for the Prestashop API.
-PrestaSharp uses the RestSharp library to consume the Prestashop services.
+## What is this project?
+**PrestaSharp** is a C# .NET client library that allows developers to interact with [PrestaShop](https://www.prestashop.com/) e-commerce stores programmatically through PrestaShop's built-in REST web service API.
 
-##Basic usage
+[PrestaShop](https://www.prestashop.com/) is a free, open-source e-commerce platform used to build online stores. It exposes a REST web service that lets external applications read and write store data such as products, orders, customers, categories, and more.
+
+PrestaSharp wraps this REST API in a clean, strongly-typed .NET library so you can manage your PrestaShop store data from any .NET application without dealing with raw HTTP requests or XML serialization.
+
+## Introduction
+A simple .NET REST client written in C# for the PrestaShop API.
+PrestaSharp uses the [RestSharp](https://restsharp.dev/) library to consume the PrestaShop web services.
+
+## Requirements
+- .NET Framework 4.5 or higher
+- [RestSharp](https://www.nuget.org/packages/RestSharp/) 105.0.1
+
+## Installation
+
+Install PrestaSharp via [NuGet](https://www.nuget.org/packages/PrestaSharp/):
+
+```
+PM> Install-Package PrestaSharp
+```
+
+Or via the .NET CLI:
+
+```
+dotnet add package PrestaSharp
+```
+
+## Basic usage
 1) Initiate a client instance:
 
 ```
@@ -34,7 +59,7 @@ PrestaSharp uses the RestSharp library to consume the Prestashop services.
 	ImageFactory.AddProductImage((long)MyProduct.id, "C:\\MyImage.jpg");
 ```
 
-##Advanced usage
+## Advanced usage
 1) Get all. This sample retrieves the list of manufacturers:
 
 ```
@@ -95,12 +120,13 @@ PrestaSharp uses the RestSharp library to consume the Prestashop services.
 	List<manufacturer> manufacturers = ManufacturerFactory.GetByFilter(dtn, "name_ASC", "[9,5]");
 ```
 
-##Supported resources
-- Address
+## Supported resources
+- Addresses
 - Carriers
 - Carts
 - Categories
 - Combinations
+- Countries
 - Currencies
 - Customers
 - Customer Messages
@@ -113,6 +139,7 @@ PrestaSharp uses the RestSharp library to consume the Prestashop services.
 - Orders
 - Order Carriers
 - Order Histories
+- Order Payments
 - Order States
 - Products
 - Product Features
@@ -123,22 +150,23 @@ PrestaSharp uses the RestSharp library to consume the Prestashop services.
 - Specific Prices
 - States
 - Stock Availables
+- Suppliers
 - Tags
 - Tax
-- Tax Rule
+- Tax Rules
 - Tax Rule Groups
 - Zones
 
-##Supported actions
+## Supported actions
 - Create
 - Read
 - Update
 - Delete
 
-##Roadmap
+## Roadmap
 - Add other resources
 
-##License
+## License
 PrestaSharp is GNU General Public License (GPL)
 
 This program is distributed in the hope that it will be useful, but without any warranty; without even the implied warranty of merchantabilty or fitness for a particular purpose. See the GNU General Public License for more details. You should have received a copy of the GNU General Public License along with this program. If not, see <http://www.gnu.org/licenses/>.
